@@ -1,0 +1,33 @@
+<div ng-controller='poolContrroller as pdCtrl'>
+
+	<h1>Pool #{{pdCtrl.poolDetail.pool_info.id}}: {{pdCtrl.poolDetail.pool_info.name}}</h1>
+	<h2>Choose your stake</h2>
+	
+	<div ng-repeat="key in pdCtrl.stakeValues">
+	<label>
+		<input type="radio"
+		   ng-model = "pdCtrl.selectedStake"
+		   name = "selectedStake"
+		   value="{{key}}">{{key}}
+	</label>
+	</div>
+	
+	<p><strong>Your stake:</strong> {{ pdCtrl.selectedStake }}</p>
+	<p><strong>Total number of lines:</strong> {{ pdCtrl.getLines() | number : 2 }}</p>
+	<p><strong>Total bet:</strong> £{{ pdCtrl.getLines() * pdCtrl.selectedStake | number : 2 }}</p>
+
+	<button ng-click="pdCtrl.submitBet()">Submit Bet</button>
+
+	<div ng-repeat="leg in pdCtrl.poolDetail.legs">
+		<p><strong>{{leg.sport_event.name}}</strong></p>
+		<div ng-repeat="selection in leg.selections">
+			<div>
+				<input type="checkbox"
+				  	   ng-model="pdCtrl.selected.legs[leg.id].selections[selection.id]">
+					   {{selection.name}}
+			</div>
+		</div>
+	</div>
+	
+
+</div>

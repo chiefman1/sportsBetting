@@ -1,0 +1,18 @@
+<div ng-controller='poolsController as plCtrl'>
+	<h1>Pool List</h1>
+	<ul>
+		<li ng-repeat="group in plCtrl.pools | orderBy:'display_group_order'" ng-include="'template_renderer.html'"></li>
+	</ul>
+
+	<script type="text/ng-template"  id="template_renderer.html">
+		<h3>{{group.display_group_name}}</h3>
+		{{group.polls}}
+		<ul>
+			<li ng-repeat="pool in group.pools">
+				<a href="" ng-click="vm.goPool(pool.id)">{{pool.name}}</a>
+			</li>
+			<li ng-repeat="group in group.groups | orderBy:'display_group_order'" ng-include="'template_renderer.html'">
+			</li>
+		</ul>
+	</script>
+</div>
