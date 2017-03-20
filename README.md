@@ -36,7 +36,7 @@ Project structure and code organization are based on John Papa's AngularJS Style
 <pre>
 .
 ├── build                   # Compiled files (alternatively `dist`)
-├── src                     # Source files (alternatively `lib` or `app`)
+├── src                     # Source files
 ├── package.json            # NPM packages list
 ├── gulpfile.js             # Gulp preferences
 ├── bower.json              # Bower preferences
@@ -49,6 +49,8 @@ Project structure and code organization are based on John Papa's AngularJS Style
 
 in src/main.js collected list of connected libraries. To make application refresh faster, during development, I reccomend to connect links inside index.htmls from Google Hosted Libraries. E. G. 
 
+*
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+*
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
