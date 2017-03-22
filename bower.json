@@ -1,5 +1,5 @@
 {
-  "name": "listerine",
+  "name": "sports_betting",
   "authors": [
     "Chiefman <unlimiterider@gmail.com>"
   ],
@@ -12,7 +12,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "build"
   ],
   "dependencies": {
     "normalize.css": "*",

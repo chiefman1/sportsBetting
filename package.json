@@ -1,6 +1,6 @@
 {
-  "name": "listerine",
-  "version": "1.0.0",
+  "name": "sports_betting",
+  "version": "0.0.3",
   "description": "listerine test project",
   "main": "index.js",
   "scripts": {

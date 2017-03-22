@@ -77,11 +77,10 @@ gulp.task('php:build', function () {
 
 gulp.task('style:build', function () {
     gulp.src(path.src.style)
-        .pipe(rigger())
         .pipe(sourcemaps.init())
+        .pipe(cssmin())
         .pipe(sass())
         .pipe(prefixer())
-        .pipe(cssmin())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
