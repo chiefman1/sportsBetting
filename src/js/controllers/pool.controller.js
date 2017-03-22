@@ -3,11 +3,11 @@
 	
 	angular
 		.module('sportsBetting')
-		.controller('poolContrroller', poolContrroller);
+		.controller('poolController', poolController);
 		
-	poolContrroller.$inject = ['$scope', 'getData', '$route', '$stateParams'];
+	poolController.$inject = ['$scope', 'getData', '$route', '$stateParams'];
 	
-	function poolContrroller($scope, getData, $route, $stateParams){
+	function poolController($scope, getData, $route, $stateParams){
 		var vm = this;
 		vm.poolDetail = [];
 		vm.selected = {};

@@ -21,7 +21,7 @@
 
 				.state('pool', {
 					url: "/pool/:poolId",
-					controller: 'poolContrroller',
+					controller: 'poolController',
 					templateUrl: "/templates/pool.html",
 					controllerAs: 'vm'
 				})
