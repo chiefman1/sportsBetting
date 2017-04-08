@@ -22,21 +22,25 @@
 			/**
 			* Return a list of all pools
 			*/	
-			return $http.get('https://colossusdevtest.herokuapp.com/api/pools.json');
+			//return $http.get('https://colossusdevtest.herokuapp.com/api/pools.json');
+			return $http.get('/test-data/pools.json');
 		}
 		
 		function poolDetail(id){
 			/**
 			 * Return detailed information about a given pool
 			 */
-			 return $http.get('https://colossusdevtest.herokuapp.com/api/pools/'+id+'.json');
+			// return $http.get('https://colossusdevtest.herokuapp.com/api/pools/'+id+'.json');
+			return $http.get('/test-data/pools/'+id+'.json');
+
 		}
 		
 		function makeBet(bet){
 			/**
 			 * Pushes completed bet to the server
 			 */
-			 return $http.post('https://colossusdevtest.herokuapp.com/api/tickets.json', bet);
+			// return $http.post('https://colossusdevtest.herokuapp.com/api/tickets.json', bet);
+			return
 		}
 
 		function makeLocalBet(bet){

@@ -30,7 +30,6 @@
 					console.log('error retrieving pool list', error);
 				});
 		}
-		console.log($scope.pool);
 	}
 	
 })();

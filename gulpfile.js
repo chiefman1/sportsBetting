@@ -19,14 +19,16 @@ var path = {
         json:'build/',
         php: 'build/',
         import: 'build/',
-        css: 'build/css/'
+        css: 'build/css/',
+        testData: 'build/test-data/'
     },
     src: {
         html: 'src/**/*.html',
         js: 'src/**/*.js',
         json: 'src/tickets.json',
         php: 'src/*.php',
-        style: 'src/style.scss'
+        style: 'src/style.scss',
+        testData: 'src/test-data/**/*'
     },
     watch: {
         html: 'src/**/*.html',
@@ -63,9 +65,9 @@ gulp.task('js:build', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('json:build', function () {
-    gulp.src(path.src.json)
-        .pipe(gulp.dest(path.build.json))
+gulp.task('testData:build', function () {
+    gulp.src(path.src.testData)
+        .pipe(gulp.dest(path.build.testData))
         .pipe(reload({stream: true}));
 });
 
@@ -90,8 +92,8 @@ gulp.task('build', [
     'html:build',
     'js:build',
     'php:build',
-    'json:build',
-    'style:build'
+    'style:build',
+    'testData:build'
 ]);
 
 gulp.task('watch', function(){
@@ -104,7 +106,6 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
-
 });
 
 gulp.task('webserver', function () {
